@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDeskApp.Entity", "HelpDeskApp.Entity\HelpDeskApp.Entity.csproj", "{3D7309F8-E634-4F75-84B6-364FD8E6A28E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDeskApp.Common", "HelpDeskApp.Common\HelpDeskApp.Common.csproj", "{83E0E4BA-B2DF-4B2F-B18D-A3279498E13A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDeskApp.Library", "HelpDeskApp.Library\HelpDeskApp.Library.csproj", "{0DAE1774-27CE-4EBA-A14C-CBCBBA36CD24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDeskApp.Service", "HelpDeskApp.WebApi\HelpDeskApp.Service.csproj", "{31AA15C9-30FC-4670-8659-3E4EF7820CC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDeskApp.Test", "HelpDeskApp.Test\HelpDeskApp.Test.csproj", "{F7A4F2ED-C129-403C-9349-A3098E2159D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDeskApp.Web", "HelpDeskApp.Web\HelpDeskApp.Web.csproj", "{902DD95E-2E51-4888-96EC-957010322B9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D7309F8-E634-4F75-84B6-364FD8E6A28E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7309F8-E634-4F75-84B6-364FD8E6A28E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7309F8-E634-4F75-84B6-364FD8E6A28E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7309F8-E634-4F75-84B6-364FD8E6A28E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E0E4BA-B2DF-4B2F-B18D-A3279498E13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E0E4BA-B2DF-4B2F-B18D-A3279498E13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E0E4BA-B2DF-4B2F-B18D-A3279498E13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E0E4BA-B2DF-4B2F-B18D-A3279498E13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DAE1774-27CE-4EBA-A14C-CBCBBA36CD24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DAE1774-27CE-4EBA-A14C-CBCBBA36CD24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DAE1774-27CE-4EBA-A14C-CBCBBA36CD24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DAE1774-27CE-4EBA-A14C-CBCBBA36CD24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31AA15C9-30FC-4670-8659-3E4EF7820CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31AA15C9-30FC-4670-8659-3E4EF7820CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31AA15C9-30FC-4670-8659-3E4EF7820CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31AA15C9-30FC-4670-8659-3E4EF7820CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A4F2ED-C129-403C-9349-A3098E2159D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A4F2ED-C129-403C-9349-A3098E2159D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A4F2ED-C129-403C-9349-A3098E2159D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A4F2ED-C129-403C-9349-A3098E2159D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{902DD95E-2E51-4888-96EC-957010322B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{902DD95E-2E51-4888-96EC-957010322B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{902DD95E-2E51-4888-96EC-957010322B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{902DD95E-2E51-4888-96EC-957010322B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

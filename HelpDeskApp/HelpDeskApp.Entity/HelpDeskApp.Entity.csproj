@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D7309F8-E634-4F75-84B6-364FD8E6A28E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HelpDeskApp.Entity</RootNamespace>
+    <AssemblyName>HelpDeskApp.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DEPARTAMENTOS.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DIVISION.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESTATUS.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRUPOS.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HelpDeskAppModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpDeskAppModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HelpDeskAppModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HelpDeskAppModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpDeskAppModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ISSUES.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORGANIZACION.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PREGUNTAS.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRIORIDAD.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPC_GET_ALL_TICKETS_WITH_DESCRIP_Result.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPC_GET_TICKETS_USER_FOLLOWED_Result.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPC_GET_TICKET_BY_USR_REQUEST_Result.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TICKETS.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TICKETS1.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TICKETS_RESPUESTA.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_FOLLOWED_USER.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_GROUPS.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIOS.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIOS_SEGUIDOS.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Membership.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_OAuthMembership.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Roles.cs">
+      <DependentUpon>HelpDeskAppModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="HelpDeskAppModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HelpDeskAppModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="HelpDeskAppModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HelpDeskAppModel.edmx</DependentUpon>
+      <LastGenOutput>HelpDeskAppModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="HelpDeskAppModel.edmx.diagram">
+      <DependentUpon>HelpDeskAppModel.edmx</DependentUpon>
+    </None>
+    <None Include="HelpDeskAppModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HelpDeskAppModel.edmx</DependentUpon>
+      <LastGenOutput>HelpDeskAppModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

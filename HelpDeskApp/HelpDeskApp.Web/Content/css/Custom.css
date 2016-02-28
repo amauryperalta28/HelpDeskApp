@@ -1,0 +1,77 @@
+﻿body {
+}
+
+.anonimous {
+    visibility:hidden;
+}
+
+.nav .navbar-nav > li > a{
+    font-size:35px;
+}
+
+.tableTools-alert.gritter-item-wrapper {
+    padding: 12px 11px 8px;
+    z-index: 1999;
+}
+.gritter-item-wrapper.gritter-info {
+    background: rgba(49, 81, 133, 0.92);
+}
+.gritter-item-wrapper.gritter-error {
+    background: rgba(153, 40, 18, 0.92);
+}
+.gritter-item-wrapper.gritter-success {
+    background: rgba(89, 131, 75, 0.92);
+}
+.gritter-item-wrapper.gritter-warning {
+    background: rgba(190, 112, 31, 0.92);
+}
+
+.gritter-item-wrapper.gritter-light.gritter-info {
+  background: rgba(232, 242, 255, 0.95);
+}
+.gritter-item-wrapper.gritter-light.gritter-info .gritter-item {
+  color: #4A577D;
+}
+.gritter-item-wrapper.gritter-light.gritter-error {
+  background: rgba(255, 235, 235, 0.95);
+}
+.gritter-item-wrapper.gritter-light.gritter-error .gritter-item {
+  color: #894A38;
+}
+.gritter-item-wrapper.gritter-light.gritter-success {
+  background: rgba(239, 250, 227, 0.95);
+}
+
+.dataTables_length {
+        margin-top: 10px !important;
+    }
+
+
+/*.steps-container {
+border-radius: 4px 4px 0 0;
+    overflow: hidden;
+}
+.steps li .small-title {
+     display: block;
+    margin-top: 4px;
+    max-width: 100%;
+    color: #949ea7;
+    font-size: 9px;
+    z-index: 104;
+    text-align: center;
+    table-layout: fixed;
+    word-wrap: break-word
+}
+.steps li.active .small-title {
+   display: block;
+    margin-top: 4px;
+    max-width: 100%;
+    color: #949ea7;
+    font-size: 12px;
+    z-index: 104;
+    text-align: center;
+    table-layout: fixed;
+    word-wrap: break-word
+}*/
+
+

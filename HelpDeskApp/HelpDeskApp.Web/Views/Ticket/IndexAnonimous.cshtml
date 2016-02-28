@@ -1,0 +1,180 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AnonimousLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Tickets
+                           
+            <small>Tickets Preview</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i><a href="index.html"> Consulta de Solicitudes</a>
+            </li>
+            
+
+        </ol>
+
+    </div>
+
+</div>
+
+@*<br />*@
+@*<div class="row">
+    <a href="@Url.Action("create", "Ticket") ">
+        <div class="col-md-7">
+            <button class="btn btn-info" id="newTicket">
+                <i class="menu-icon glyphicon glyphicon-plus"></i>
+                Nueva Solicitud
+            </button>
+        </div>
+    </a>
+</div>*@
+<br />
+
+
+<div class="row">
+    <div class="col-sm-8 widget-container">
+        <label class="col-sm-5-1 control-label no-padding-right" for="Name">Buscar por usuario:  </label>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="fa fa-user bigger-110"></i>
+            </span>
+
+            <input class="form-control" type="text" data-type="integer" placeholder="amaury28" name="UserId" id="UserId" />
+            <div class="input-group-btn" id="search-btn">
+                <button type="button" id="search" onclick="SearchByUser()" class="btn btn-sm btn-info">
+                    <i class="fa fa-search"></i>
+                    Filtar
+                </button>
+                 @* <button type="button" id="Second-search" onclick="GetAll()" class="btn btn-sm btn-info">
+                      <i class="fa fa-list"></i>
+                  Todos
+                </button>*@
+           
+            </div>
+           
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+<div class="row" id="TicketContainer">
+
+    @Html.Partial("_TicketList")
+
+</div>
+
+@section scripts{
+
+    <script src="@Url.Content("~/Content/plugins/dataTables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/dataTables/dataTables.tableTools.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/dataTables/jquery.dataTables.columnFilter.js")"></script>
+    <link href="@Url.Content("~/Content/plugins/dataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Content/js/dataTables/jquery.dataTables.bootstrap.js")"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            disableTicketCreation()
+
+            var table = $('#ticket').dataTable({
+                "dom": 'TC<"clear">lfrtip',
+                "tableTools": {
+                    "sSwfPath": "../../Content/plugins/dataTables/swf/copy_csv_xls_pdf.swf",
+                    "aButtons": [
+                "pdf",
+                "csv",
+                "xls"]
+                },
+                language: {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+
+        });
+
+        function disableTicketCreation()
+        {
+            var user = $('#userA').val();
+            if (user != null) {
+                $('#newTicket').addClass("anonimous");
+            }
+
+
+        }
+
+        function SearchByUser() {
+            var usuario = $('#UserId').val();
+            $.ajax({
+                url: '@Url.Action("GetTicketByUserName", "Ticket")',
+                data: { UserId: usuario },
+                success: function (data) {
+                    $('#TicketContainer').html('');
+                    $('#TicketContainer').html(data);
+                    var table = $('#ticket').dataTable({
+                        "dom": 'TC<"clear">lfrtip',
+                        "tableTools": {
+                            "sSwfPath": "../../Content/plugins/dataTables/swf/copy_csv_xls_pdf.swf",
+                            "aButtons": [
+                        "pdf",
+                        "csv",
+                        "xls"]
+                        },
+                        language: {
+                            "sProcessing": "Procesando...",
+                            "sLengthMenu": "Mostrar _MENU_ registros",
+                            "sZeroRecords": "No se encontraron resultados",
+                            "sEmptyTable": "Ningún dato disponible en esta tabla",
+                            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                            "sInfoPostFix": "",
+                            "sSearch": "Buscar:",
+                            "sUrl": "",
+                            "sInfoThousands": ",",
+                            "sLoadingRecords": "Cargando...",
+                            "oPaginate": {
+                                "sFirst": "Primero",
+                                "sLast": "Último",
+                                "sNext": "Siguiente",
+                                "sPrevious": "Anterior"
+                            },
+                            "oAria": {
+                                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                            }
+                        }
+                    });
+                }
+
+            });
+        }
+    </script>
+    
+    }

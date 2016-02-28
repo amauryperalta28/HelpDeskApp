@@ -1,0 +1,96 @@
+﻿@model List<HelpDeskApp.Common.Models.Spc_Get_All_Tickets_With_Descrip>
+
+<table id="ticket" class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Titulo
+            </th>
+            @*            <th>Descripcion
+            </th>*@
+            <th>Situacion
+            </th>
+            <th>Departamento
+            </th>
+            <th>Division Destino
+            </th>
+            <th>Usuario Solicitud
+            </th>
+            <th>Usuario Asignado
+            </th>
+            <th>Fecha Solicitud
+            </th>
+
+            @* <th>Fecha Modificacion
+            </th>*@
+            <th></th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                @*                    <td>
+                        @Html.DisplayFor(modelItem => item.TicketDescrip)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.IssueDescrip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartamentoDescrip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DivisionDescrip)
+                </td>
+                <td>
+                    <a href="@Url.Action("Index", "User", new { id = item.userRequestId })">
+                        @Html.DisplayFor(modelItem => item.UsuarioRequest)
+                    </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Index", "User", new { id = item.userAssignedId })">
+                        @Html.DisplayFor(modelItem => item.UsuarioAsignado)
+                    </a>
+                </td>
+                <td>
+                    @string.Format("{0}/{1}/{2}", item.Fecha_Solicitud.Day, item.Fecha_Solicitud.Month, item.Fecha_Solicitud.Year)
+                </td>
+
+                @* <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_Modificacion)
+                </td>*@
+
+                <td>
+                    <a href="@Url.Action("Edit", "Ticket", new { id = item.Id })" title="Editar">
+                        <span class="ace-icon fa fa-pencil align-top bigger-125"></span>
+
+                    </a>
+
+                </td>
+                <td>
+                    <a href="@Url.Action("CloseTicket", "Ticket", new { id = item.Id })" title="Cerrar Solicitud">
+                        <span class="ace-icon fa fa-check align-top bigger-125"></span>
+
+                    </a>
+
+                </td>
+            </tr>
+            
+
+            }
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

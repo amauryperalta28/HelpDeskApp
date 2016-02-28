@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HelpDeskApp - Dashboard</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="@Url.Content("~/Template/css/bootstrap.min.css")" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Template/css/sb-admin.css")" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href=" @Url.Content("~/Template/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/ace-fonts.css" />
+
+
+    <link href="@Url.Content("~/Content/jquery.gritter.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("~/Content/css/ace.css")" rel="stylesheet" />*@
+    <link href="@Url.Content("~/Content/css/Custom.css")" rel="stylesheet" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("index", "Home")"><i class="glyphicon glyphicon-wrench"></i>HelpDesk App</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li>
+                    @Html.Partial("_LoginPartial")
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")"><i class="fa fa-fw fa-dashboard"></i>DashBoard </a>
+                    </li>
+
+                   @* <li>
+                        <a href="@Url.Action("Index", "Ticket")"><i class="fa fa-fw fa-edit"></i>Solicitudes</a>
+                    </li>*@
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i>Solicitudes<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="@Url.Action("Index", "Ticket")">Todas</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "UserFollowed")">Usuarios Seguidos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-desktop"></i>Soluciones</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-wrench"></i>Modificar FAQ</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-file"></i>Informes <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Historico de Solicitudes</a>
+                            </li>
+                            <li>
+                                <a href="#">Informes de Volumen</a>
+                            </li>
+                            <li>
+                                <a href="#">Listas de Solicitudes</a>
+                            </li>
+                            <li>
+                                <a href="#">Tiempo de Gestión</a>
+                            </li>
+                            <li>
+                                <a href="#">Volumen de Solicitudes</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i>Administracion</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i>Manual</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                @RenderSection("featured", required: false)
+                @RenderBody()
+                <!-- Page Heading -->
+                @*<div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Blank Page
+                            <small>Subheading</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-file"></i> Blank Page
+                            </li>
+                        </ol>
+						@RenderSection("featured", required: false)
+                        @RenderBody()
+                    </div>
+					
+					
+                </div>*@
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Template/js/jquery.js")"></script>
+
+    <script src= "@Url.Content("~/Scripts/jquery.gritter.min.js")"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="@Url.Content("~/Template/js/bootstrap.min.js")"></script>
+
+    <script src="@Url.Content("~/System_Scripts/CommonJS.js")"></script>
+    <script src="@Url.Content("~/Template/js/AjaxAutorize.js")"></script>
+    <script src="@Url.Content("~/Template/js/jquery.unobtrusive-ajax.js")"></script>
+
+    <!-- ace scripts -->
+    <script src="@Url.Content("~/Content/js/ace/elements.scroller.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/elements.colorpicker.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/elements.fileinput.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/elements.wysiwyg.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/elements.spinner.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/elements.treeview.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/elements.wizard.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/elements.aside.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.ajax-content.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.touch-drag.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.sidebar.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.sidebar-scroll-1.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.submenu-hover.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.widget-box.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.settings.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.settings-rtl.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.settings-skin.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.widget-on-reload.js")"></script>
+    <script src="@Url.Content("~/Content/js/ace/ace.searchbox-autocomplete.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery.blockUI.js")"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

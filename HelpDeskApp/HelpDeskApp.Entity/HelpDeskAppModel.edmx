@@ -1,0 +1,1311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HelpDeskApfModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="HelpDeskApfModelStoreContainer">
+          <EntitySet Name="DEPARTAMENTOS" EntityType="HelpDeskApfModel.Store.DEPARTAMENTOS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DIVISION" EntityType="HelpDeskApfModel.Store.DIVISION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ESTATUS" EntityType="HelpDeskApfModel.Store.ESTATUS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GRUPOS" EntityType="HelpDeskApfModel.Store.GRUPOS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ISSUES" EntityType="HelpDeskApfModel.Store.ISSUES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ORGANIZACION" EntityType="HelpDeskApfModel.Store.ORGANIZACION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PREGUNTAS" EntityType="HelpDeskApfModel.Store.PREGUNTAS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PRIORIDAD" EntityType="HelpDeskApfModel.Store.PRIORIDAD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TICKETS" EntityType="HelpDeskApfModel.Store.TICKETS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TICKETS_RESPUESTA" EntityType="HelpDeskApfModel.Store.TICKETS_RESPUESTA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TICKETS1" EntityType="HelpDeskApfModel.Store.TICKETS1" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USER_FOLLOWED_USER" EntityType="HelpDeskApfModel.Store.USER_FOLLOWED_USER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USER_GROUPS" EntityType="HelpDeskApfModel.Store.USER_GROUPS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfile" EntityType="HelpDeskApfModel.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USUARIOS" EntityType="HelpDeskApfModel.Store.USUARIOS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USUARIOS_SEGUIDOS" EntityType="HelpDeskApfModel.Store.USUARIOS_SEGUIDOS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Membership" EntityType="HelpDeskApfModel.Store.webpages_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="HelpDeskApfModel.Store.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Roles" EntityType="HelpDeskApfModel.Store.webpages_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="HelpDeskApfModel.Store.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_DIVISION_DEPARTAMENTOS" Association="HelpDeskApfModel.Store.FK_DIVISION_DEPARTAMENTOS">
+            <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+            <End Role="DIVISION" EntitySet="DIVISION" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoleId" Association="HelpDeskApfModel.Store.fk_RoleId">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_DEPARTAMENTOS" Association="HelpDeskApfModel.Store.FK_TICKETS_DEPARTAMENTOS">
+            <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_DIVISION" Association="HelpDeskApfModel.Store.FK_TICKETS_DIVISION">
+            <End Role="DIVISION" EntitySet="DIVISION" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_ESTATUS" Association="HelpDeskApfModel.Store.FK_TICKETS_ESTATUS">
+            <End Role="ESTATUS" EntitySet="ESTATUS" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_ISSUES" Association="HelpDeskApfModel.Store.FK_TICKETS_ISSUES">
+            <End Role="ISSUES" EntitySet="ISSUES" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_ORGANIZACION" Association="HelpDeskApfModel.Store.FK_TICKETS_ORGANIZACION">
+            <End Role="ORGANIZACION" EntitySet="ORGANIZACION" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_USUARIOS" Association="HelpDeskApfModel.Store.FK_TICKETS_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_DEPARTAMENTOS" Association="HelpDeskApfModel.Store.FK_TICKETS1_DEPARTAMENTOS">
+            <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_DIVISION" Association="HelpDeskApfModel.Store.FK_TICKETS1_DIVISION">
+            <End Role="DIVISION" EntitySet="DIVISION" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_ESTATUS" Association="HelpDeskApfModel.Store.FK_TICKETS1_ESTATUS">
+            <End Role="ESTATUS" EntitySet="ESTATUS" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_ISSUES" Association="HelpDeskApfModel.Store.FK_TICKETS1_ISSUES">
+            <End Role="ISSUES" EntitySet="ISSUES" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_ORGANIZACION" Association="HelpDeskApfModel.Store.FK_TICKETS1_ORGANIZACION">
+            <End Role="ORGANIZACION" EntitySet="ORGANIZACION" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_USUARIOS" Association="HelpDeskApfModel.Store.FK_TICKETS1_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserId" Association="HelpDeskApfModel.Store.fk_UserId">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DEPARTAMENTOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Fecha_Creacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DIVISION">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="departamentoId" Type="int" Nullable="false" />
+          <Property Name="Fecha_Creacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTATUS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GRUPOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Fecha_Creacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ISSUES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Fecha_Creacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORGANIZACION">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PREGUNTAS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="PRIORIDAD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TICKETS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="IssueId" Type="int" Nullable="false" />
+          <Property Name="UserRequestId" Type="int" Nullable="false" />
+          <Property Name="RequestDepartamentId" Type="int" Nullable="false" />
+          <Property Name="DestinationDivisionId" Type="int" Nullable="false" />
+          <Property Name="Estatus" Type="int" Nullable="false" />
+          <Property Name="OrganizacionId" Type="int" Nullable="false" />
+          <Property Name="UserAssigned" Type="int" Nullable="false" />
+          <Property Name="Fecha_Solicitud" Type="datetime" Nullable="false" />
+          <Property Name="Fecha_Correcion" Type="datetime" />
+          <Property Name="Fecha_Modificacion" Type="datetime" />
+          <Property Name="Fecha_Vencimiento" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TICKETS_RESPUESTA">
+          <Key>
+            <PropertyRef Name="IdTickets" />
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdTickets" Type="int" Nullable="false" />
+          <Property Name="IdPregunta" Type="int" Nullable="false" />
+          <Property Name="Respuesta" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TICKETS1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="IssueId" Type="int" Nullable="false" />
+          <Property Name="UserRequestId" Type="int" Nullable="false" />
+          <Property Name="RequestDepartamentId" Type="int" Nullable="false" />
+          <Property Name="DestinationDivisionId" Type="int" Nullable="false" />
+          <Property Name="Estatus" Type="int" Nullable="false" />
+          <Property Name="OrganizacionId" Type="int" Nullable="false" />
+          <Property Name="UserAssigned" Type="int" Nullable="false" />
+          <Property Name="Fecha_Solicitud" Type="datetime" Nullable="false" />
+          <Property Name="Fecha_Correcion" Type="datetime" />
+          <Property Name="Fecha_Modificacion" Type="datetime" />
+          <Property Name="Fecha_Vencimiento" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_FOLLOWED_USER">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserIdFollowed" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserIdFollowed" Type="int" Nullable="false" />
+          <Property Name="Fecha_Creacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_GROUPS">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="56" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PrimerNombre" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="SegundoNombre" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="PrimerApellido" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="SegundoApellido" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Usuario" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="Fecha_creacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIOS_SEGUIDOS">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserFollowedId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserFollowedId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DIVISION_DEPARTAMENTOS">
+          <End Role="DEPARTAMENTOS" Type="HelpDeskApfModel.Store.DEPARTAMENTOS" Multiplicity="1" />
+          <End Role="DIVISION" Type="HelpDeskApfModel.Store.DIVISION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTAMENTOS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DIVISION">
+              <PropertyRef Name="departamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoleId">
+          <End Role="webpages_Roles" Type="HelpDeskApfModel.Store.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="HelpDeskApfModel.Store.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_DEPARTAMENTOS">
+          <End Role="DEPARTAMENTOS" Type="HelpDeskApfModel.Store.DEPARTAMENTOS" Multiplicity="1" />
+          <End Role="TICKETS" Type="HelpDeskApfModel.Store.TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTAMENTOS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="RequestDepartamentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_DIVISION">
+          <End Role="DIVISION" Type="HelpDeskApfModel.Store.DIVISION" Multiplicity="1" />
+          <End Role="TICKETS" Type="HelpDeskApfModel.Store.TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIVISION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="DestinationDivisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_ESTATUS">
+          <End Role="ESTATUS" Type="HelpDeskApfModel.Store.ESTATUS" Multiplicity="1" />
+          <End Role="TICKETS" Type="HelpDeskApfModel.Store.TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTATUS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="Estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_ISSUES">
+          <End Role="ISSUES" Type="HelpDeskApfModel.Store.ISSUES" Multiplicity="1" />
+          <End Role="TICKETS" Type="HelpDeskApfModel.Store.TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ISSUES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="IssueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_ORGANIZACION">
+          <End Role="ORGANIZACION" Type="HelpDeskApfModel.Store.ORGANIZACION" Multiplicity="1" />
+          <End Role="TICKETS" Type="HelpDeskApfModel.Store.TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORGANIZACION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="OrganizacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_USUARIOS">
+          <End Role="USUARIOS" Type="HelpDeskApfModel.Store.USUARIOS" Multiplicity="1" />
+          <End Role="TICKETS" Type="HelpDeskApfModel.Store.TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="UserRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_DEPARTAMENTOS">
+          <End Role="DEPARTAMENTOS" Type="HelpDeskApfModel.Store.DEPARTAMENTOS" Multiplicity="1" />
+          <End Role="TICKETS1" Type="HelpDeskApfModel.Store.TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTAMENTOS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="RequestDepartamentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_DIVISION">
+          <End Role="DIVISION" Type="HelpDeskApfModel.Store.DIVISION" Multiplicity="1" />
+          <End Role="TICKETS1" Type="HelpDeskApfModel.Store.TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIVISION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="DestinationDivisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_ESTATUS">
+          <End Role="ESTATUS" Type="HelpDeskApfModel.Store.ESTATUS" Multiplicity="1" />
+          <End Role="TICKETS1" Type="HelpDeskApfModel.Store.TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTATUS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="Estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_ISSUES">
+          <End Role="ISSUES" Type="HelpDeskApfModel.Store.ISSUES" Multiplicity="1" />
+          <End Role="TICKETS1" Type="HelpDeskApfModel.Store.TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ISSUES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="IssueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_ORGANIZACION">
+          <End Role="ORGANIZACION" Type="HelpDeskApfModel.Store.ORGANIZACION" Multiplicity="1" />
+          <End Role="TICKETS1" Type="HelpDeskApfModel.Store.TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORGANIZACION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="OrganizacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_USUARIOS">
+          <End Role="USUARIOS" Type="HelpDeskApfModel.Store.USUARIOS" Multiplicity="1" />
+          <End Role="TICKETS1" Type="HelpDeskApfModel.Store.TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="UserRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UserId">
+          <End Role="UserProfile" Type="HelpDeskApfModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="HelpDeskApfModel.Store.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SPC_GET_ALL_TICKETS_WITH_DESCRIP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPC_GET_TICKET_BY_USR_REQUEST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="USUARIO" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SPC_GET_TICKETS_USER_FOLLOWED" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UsrId" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HelpDeskApfModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HelpDeskApfEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="DEPARTAMENTOS" EntityType="HelpDeskApfModel.DEPARTAMENTOS" />
+          <EntitySet Name="DIVISION" EntityType="HelpDeskApfModel.DIVISION" />
+          <EntitySet Name="ESTATUS" EntityType="HelpDeskApfModel.ESTATUS" />
+          <EntitySet Name="GRUPOS" EntityType="HelpDeskApfModel.GRUPOS" />
+          <EntitySet Name="ISSUES" EntityType="HelpDeskApfModel.ISSUES" />
+          <EntitySet Name="ORGANIZACION" EntityType="HelpDeskApfModel.ORGANIZACION" />
+          <EntitySet Name="PREGUNTAS" EntityType="HelpDeskApfModel.PREGUNTAS" />
+          <EntitySet Name="PRIORIDAD" EntityType="HelpDeskApfModel.PRIORIDAD" />
+          <EntitySet Name="TICKETS_RESPUESTA" EntityType="HelpDeskApfModel.TICKETS_RESPUESTA" />
+          <EntitySet Name="USER_FOLLOWED_USER" EntityType="HelpDeskApfModel.USER_FOLLOWED_USER" />
+          <EntitySet Name="USER_GROUPS" EntityType="HelpDeskApfModel.USER_GROUPS" />
+          <AssociationSet Name="FK_DIVISION_DEPARTAMENTOS" Association="HelpDeskApfModel.FK_DIVISION_DEPARTAMENTOS">
+            <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+            <End Role="DIVISION" EntitySet="DIVISION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_FOLLOWED_USER_USER_FOLLOWED_USER" Association="HelpDeskApfModel.FK_USER_FOLLOWED_USER_USER_FOLLOWED_USER">
+            <End Role="USER_FOLLOWED_USER" EntitySet="USER_FOLLOWED_USER" />
+            <End Role="USER_FOLLOWED_USER1" EntitySet="USER_FOLLOWED_USER" />
+          </AssociationSet>
+          <EntitySet Name="UserProfile" EntityType="HelpDeskApfModel.UserProfile" />
+          <EntitySet Name="webpages_Membership" EntityType="HelpDeskApfModel.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="HelpDeskApfModel.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="HelpDeskApfModel.webpages_Roles" />
+          <AssociationSet Name="webpages_UsersInRoles" Association="HelpDeskApfModel.webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="UserProfile" EntitySet="UserProfile" />
+          </AssociationSet>
+          <EntitySet Name="USUARIOS" EntityType="HelpDeskApfModel.USUARIOS" />
+          <AssociationSet Name="FK_USER_FOLLOWED_USER_USUARIOS" Association="HelpDeskApfModel.FK_USER_FOLLOWED_USER_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="USER_FOLLOWED_USER" EntitySet="USER_FOLLOWED_USER" />
+          </AssociationSet>
+          <FunctionImport Name="SPC_GET_TICKET_BY_USR_REQUEST" ReturnType="Collection(HelpDeskApfModel.SPC_GET_TICKET_BY_USR_REQUEST_Result)">
+          <Parameter Name="USUARIO" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="USUARIOS_SEGUIDOS" EntityType="HelpDeskApfModel.USUARIOS_SEGUIDOS" />
+          <FunctionImport Name="SPC_GET_ALL_TICKETS_WITH_DESCRIP" ReturnType="Collection(HelpDeskApfModel.SPC_GET_ALL_TICKETS_WITH_DESCRIP_Result)" />
+          <FunctionImport Name="SPC_GET_TICKETS_USER_FOLLOWED" ReturnType="Collection(HelpDeskApfModel.SPC_GET_TICKETS_USER_FOLLOWED_Result)">
+          <Parameter Name="UsrId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="TICKETS" EntityType="HelpDeskApfModel.TICKETS" />
+          <AssociationSet Name="FK_TICKETS_DEPARTAMENTOS" Association="HelpDeskApfModel.FK_TICKETS_DEPARTAMENTOS">
+            <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_DIVISION" Association="HelpDeskApfModel.FK_TICKETS_DIVISION">
+            <End Role="DIVISION" EntitySet="DIVISION" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_ESTATUS" Association="HelpDeskApfModel.FK_TICKETS_ESTATUS">
+            <End Role="ESTATUS" EntitySet="ESTATUS" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_ISSUES" Association="HelpDeskApfModel.FK_TICKETS_ISSUES">
+            <End Role="ISSUES" EntitySet="ISSUES" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_ORGANIZACION" Association="HelpDeskApfModel.FK_TICKETS_ORGANIZACION">
+            <End Role="ORGANIZACION" EntitySet="ORGANIZACION" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS_USUARIOS" Association="HelpDeskApfModel.FK_TICKETS_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="TICKETS" EntitySet="TICKETS" />
+          </AssociationSet>
+          <EntitySet Name="TICKETS1" EntityType="HelpDeskApfModel.TICKETS1" />
+          <AssociationSet Name="FK_TICKETS1_DEPARTAMENTOS" Association="HelpDeskApfModel.FK_TICKETS1_DEPARTAMENTOS">
+            <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_DIVISION" Association="HelpDeskApfModel.FK_TICKETS1_DIVISION">
+            <End Role="DIVISION" EntitySet="DIVISION" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_ESTATUS" Association="HelpDeskApfModel.FK_TICKETS1_ESTATUS">
+            <End Role="ESTATUS" EntitySet="ESTATUS" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_ISSUES" Association="HelpDeskApfModel.FK_TICKETS1_ISSUES">
+            <End Role="ISSUES" EntitySet="ISSUES" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_ORGANIZACION" Association="HelpDeskApfModel.FK_TICKETS1_ORGANIZACION">
+            <End Role="ORGANIZACION" EntitySet="ORGANIZACION" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKETS1_USUARIOS" Association="HelpDeskApfModel.FK_TICKETS1_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="TICKETS1" EntitySet="TICKETS1" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DEPARTAMENTOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DIVISION" Relationship="HelpDeskApfModel.FK_DIVISION_DEPARTAMENTOS" FromRole="DEPARTAMENTOS" ToRole="DIVISION" />
+          <NavigationProperty Name="TICKETS" Relationship="HelpDeskApfModel.FK_TICKETS_DEPARTAMENTOS" FromRole="DEPARTAMENTOS" ToRole="TICKETS" />
+          <NavigationProperty Name="TICKETS1" Relationship="HelpDeskApfModel.FK_TICKETS1_DEPARTAMENTOS" FromRole="DEPARTAMENTOS" ToRole="TICKETS1" />
+        </EntityType>
+        <EntityType Name="DIVISION">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="departamentoId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DEPARTAMENTOS" Relationship="HelpDeskApfModel.FK_DIVISION_DEPARTAMENTOS" FromRole="DIVISION" ToRole="DEPARTAMENTOS" />
+          <NavigationProperty Name="TICKETS" Relationship="HelpDeskApfModel.FK_TICKETS_DIVISION" FromRole="DIVISION" ToRole="TICKETS" />
+          <NavigationProperty Name="TICKETS1" Relationship="HelpDeskApfModel.FK_TICKETS1_DIVISION" FromRole="DIVISION" ToRole="TICKETS1" />
+        </EntityType>
+        <EntityType Name="ESTATUS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TICKETS" Relationship="HelpDeskApfModel.FK_TICKETS_ESTATUS" FromRole="ESTATUS" ToRole="TICKETS" />
+          <NavigationProperty Name="TICKETS1" Relationship="HelpDeskApfModel.FK_TICKETS1_ESTATUS" FromRole="ESTATUS" ToRole="TICKETS1" />
+        </EntityType>
+        <EntityType Name="GRUPOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ISSUES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TICKETS" Relationship="HelpDeskApfModel.FK_TICKETS_ISSUES" FromRole="ISSUES" ToRole="TICKETS" />
+          <NavigationProperty Name="TICKETS1" Relationship="HelpDeskApfModel.FK_TICKETS1_ISSUES" FromRole="ISSUES" ToRole="TICKETS1" />
+        </EntityType>
+        <EntityType Name="ORGANIZACION">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TICKETS" Relationship="HelpDeskApfModel.FK_TICKETS_ORGANIZACION" FromRole="ORGANIZACION" ToRole="TICKETS" />
+          <NavigationProperty Name="TICKETS1" Relationship="HelpDeskApfModel.FK_TICKETS1_ORGANIZACION" FromRole="ORGANIZACION" ToRole="TICKETS1" />
+        </EntityType>
+        <EntityType Name="PREGUNTAS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PRIORIDAD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TICKETS_RESPUESTA">
+          <Key>
+            <PropertyRef Name="IdTickets" />
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdTickets" Type="Int32" Nullable="false" />
+          <Property Name="IdPregunta" Type="Int32" Nullable="false" />
+          <Property Name="Respuesta" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_FOLLOWED_USER">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserIdFollowed" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserIdFollowed" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="USER_FOLLOWED_USER1" Relationship="HelpDeskApfModel.FK_USER_FOLLOWED_USER_USER_FOLLOWED_USER" FromRole="USER_FOLLOWED_USER" ToRole="USER_FOLLOWED_USER1" />
+          <NavigationProperty Name="USER_FOLLOWED_USER2" Relationship="HelpDeskApfModel.FK_USER_FOLLOWED_USER_USER_FOLLOWED_USER" FromRole="USER_FOLLOWED_USER1" ToRole="USER_FOLLOWED_USER" />
+          <NavigationProperty Name="USUARIOS" Relationship="HelpDeskApfModel.FK_USER_FOLLOWED_USER_USUARIOS" FromRole="USER_FOLLOWED_USER" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="USER_GROUPS">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DIVISION_DEPARTAMENTOS">
+          <End Role="DEPARTAMENTOS" Type="HelpDeskApfModel.DEPARTAMENTOS" Multiplicity="1" />
+          <End Role="DIVISION" Type="HelpDeskApfModel.DIVISION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTAMENTOS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DIVISION">
+              <PropertyRef Name="departamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_FOLLOWED_USER_USER_FOLLOWED_USER">
+          <End Role="USER_FOLLOWED_USER" Type="HelpDeskApfModel.USER_FOLLOWED_USER" Multiplicity="1" />
+          <End Role="USER_FOLLOWED_USER1" Type="HelpDeskApfModel.USER_FOLLOWED_USER" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="USER_FOLLOWED_USER">
+              <PropertyRef Name="UserID" />
+              <PropertyRef Name="UserIdFollowed" />
+            </Principal>
+            <Dependent Role="USER_FOLLOWED_USER1">
+              <PropertyRef Name="UserID" />
+              <PropertyRef Name="UserIdFollowed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="webpages_Roles" Relationship="HelpDeskApfModel.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="String" Name="ConfirmationToken" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsConfirmed" />
+          <Property Type="DateTime" Name="LastPasswordFailureDate" Precision="3" />
+          <Property Type="Int32" Name="PasswordFailuresSinceLastSuccess" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PasswordChangedDate" Precision="3" />
+          <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordVerificationToken" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PasswordVerificationTokenExpirationDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Type="String" Name="Provider" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProviderUserId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="RoleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserProfile" Relationship="HelpDeskApfModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+        </EntityType>
+        <Association Name="webpages_UsersInRoles">
+          <End Type="HelpDeskApfModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+          <End Type="HelpDeskApfModel.UserProfile" Role="UserProfile" Multiplicity="*" />
+        </Association>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PrimerNombre" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SegundoNombre" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SegundoApellido" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_creacion" Nullable="false" Precision="3" />
+          <NavigationProperty Name="USER_FOLLOWED_USER" Relationship="HelpDeskApfModel.FK_USER_FOLLOWED_USER_USUARIOS" FromRole="USUARIOS" ToRole="USER_FOLLOWED_USER" />
+          <NavigationProperty Name="TICKETS" Relationship="HelpDeskApfModel.FK_TICKETS_USUARIOS" FromRole="USUARIOS" ToRole="TICKETS" />
+          <NavigationProperty Name="TICKETS1" Relationship="HelpDeskApfModel.FK_TICKETS1_USUARIOS" FromRole="USUARIOS" ToRole="TICKETS1" />
+        </EntityType>
+        <Association Name="FK_USER_FOLLOWED_USER_USUARIOS">
+          <End Type="HelpDeskApfModel.USUARIOS" Role="USUARIOS" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.USER_FOLLOWED_USER" Role="USER_FOLLOWED_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="USER_FOLLOWED_USER">
+              <PropertyRef Name="UserIdFollowed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="SPC_GET_TICKET_BY_USR_REQUEST_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="TicketDescrip" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="IssueDescrip" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="UsuarioRequest" Nullable="false" MaxLength="61" />
+          <Property Type="String" Name="DepartamentoDescrip" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="DivisionDescrip" Nullable="false" MaxLength="80" />
+          <Property Type="Int32" Name="Estatus" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="Fecha_Correcion" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="Fecha_Modificacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="OrganizacionDescrip" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UsuarioAsignado" Nullable="false" MaxLength="61" />
+        </ComplexType>
+        <EntityType Name="USUARIOS_SEGUIDOS">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserFollowedId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="UserFollowedId" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="SPC_GET_ALL_TICKETS_WITH_DESCRIP_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="TicketDescrip" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="IssueDescrip" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="userRequestId" Nullable="false" />
+          <Property Type="String" Name="UsuarioRequest" Nullable="false" MaxLength="61" />
+          <Property Type="Int32" Name="userAssignedId" Nullable="false" />
+          <Property Type="String" Name="UsuarioAsignado" Nullable="false" MaxLength="61" />
+          <Property Type="String" Name="DepartamentoDescrip" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="DivisionDescrip" Nullable="false" MaxLength="80" />
+          <Property Type="Int32" Name="Estatus" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="Fecha_Correcion" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Fecha_Modificacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="OrganizacionDescrip" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SPC_GET_TICKETS_USER_FOLLOWED_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="TicketDescrip" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="IssueDescrip" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="userRequestId" Nullable="false" />
+          <Property Type="String" Name="UsuarioRequest" Nullable="false" MaxLength="61" />
+          <Property Type="Int32" Name="userAssignedId" Nullable="false" />
+          <Property Type="String" Name="UsuarioAsignado" Nullable="false" MaxLength="61" />
+          <Property Type="String" Name="DepartamentoDescrip" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="DivisionDescrip" Nullable="false" MaxLength="80" />
+          <Property Type="Int32" Name="Estatus" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="Fecha_Correcion" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Fecha_Modificacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="OrganizacionDescrip" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="TICKETS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IssueId" Nullable="false" />
+          <Property Type="Int32" Name="UserRequestId" Nullable="false" />
+          <Property Type="Int32" Name="RequestDepartamentId" Nullable="false" />
+          <Property Type="Int32" Name="DestinationDivisionId" Nullable="false" />
+          <Property Type="Int32" Name="Estatus" Nullable="false" />
+          <Property Type="Int32" Name="OrganizacionId" Nullable="false" />
+          <Property Type="Int32" Name="UserAssigned" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="Fecha_Correcion" Precision="3" />
+          <Property Type="DateTime" Name="Fecha_Modificacion" Precision="3" />
+          <Property Type="DateTime" Name="Fecha_Vencimiento" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DEPARTAMENTOS" Relationship="HelpDeskApfModel.FK_TICKETS_DEPARTAMENTOS" FromRole="TICKETS" ToRole="DEPARTAMENTOS" />
+          <NavigationProperty Name="DIVISION" Relationship="HelpDeskApfModel.FK_TICKETS_DIVISION" FromRole="TICKETS" ToRole="DIVISION" />
+          <NavigationProperty Name="ESTATUS1" Relationship="HelpDeskApfModel.FK_TICKETS_ESTATUS" FromRole="TICKETS" ToRole="ESTATUS" />
+          <NavigationProperty Name="ISSUES" Relationship="HelpDeskApfModel.FK_TICKETS_ISSUES" FromRole="TICKETS" ToRole="ISSUES" />
+          <NavigationProperty Name="ORGANIZACION" Relationship="HelpDeskApfModel.FK_TICKETS_ORGANIZACION" FromRole="TICKETS" ToRole="ORGANIZACION" />
+          <NavigationProperty Name="USUARIOS" Relationship="HelpDeskApfModel.FK_TICKETS_USUARIOS" FromRole="TICKETS" ToRole="USUARIOS" />
+        </EntityType>
+        <Association Name="FK_TICKETS_DEPARTAMENTOS">
+          <End Type="HelpDeskApfModel.DEPARTAMENTOS" Role="DEPARTAMENTOS" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS" Role="TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTAMENTOS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="RequestDepartamentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_DIVISION">
+          <End Type="HelpDeskApfModel.DIVISION" Role="DIVISION" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS" Role="TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIVISION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="DestinationDivisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_ESTATUS">
+          <End Type="HelpDeskApfModel.ESTATUS" Role="ESTATUS" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS" Role="TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTATUS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="Estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_ISSUES">
+          <End Type="HelpDeskApfModel.ISSUES" Role="ISSUES" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS" Role="TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ISSUES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="IssueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_ORGANIZACION">
+          <End Type="HelpDeskApfModel.ORGANIZACION" Role="ORGANIZACION" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS" Role="TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORGANIZACION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="OrganizacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS_USUARIOS">
+          <End Type="HelpDeskApfModel.USUARIOS" Role="USUARIOS" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS" Role="TICKETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TICKETS">
+              <PropertyRef Name="UserRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TICKETS1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IssueId" Nullable="false" />
+          <Property Type="Int32" Name="UserRequestId" Nullable="false" />
+          <Property Type="Int32" Name="RequestDepartamentId" Nullable="false" />
+          <Property Type="Int32" Name="DestinationDivisionId" Nullable="false" />
+          <Property Type="Int32" Name="Estatus" Nullable="false" />
+          <Property Type="Int32" Name="OrganizacionId" Nullable="false" />
+          <Property Type="Int32" Name="UserAssigned" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha_Solicitud" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="Fecha_Correcion" Precision="3" />
+          <Property Type="DateTime" Name="Fecha_Modificacion" Precision="3" />
+          <Property Type="DateTime" Name="Fecha_Vencimiento" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DEPARTAMENTOS" Relationship="HelpDeskApfModel.FK_TICKETS1_DEPARTAMENTOS" FromRole="TICKETS1" ToRole="DEPARTAMENTOS" />
+          <NavigationProperty Name="DIVISION" Relationship="HelpDeskApfModel.FK_TICKETS1_DIVISION" FromRole="TICKETS1" ToRole="DIVISION" />
+          <NavigationProperty Name="ESTATUS1" Relationship="HelpDeskApfModel.FK_TICKETS1_ESTATUS" FromRole="TICKETS1" ToRole="ESTATUS" />
+          <NavigationProperty Name="ISSUES" Relationship="HelpDeskApfModel.FK_TICKETS1_ISSUES" FromRole="TICKETS1" ToRole="ISSUES" />
+          <NavigationProperty Name="ORGANIZACION" Relationship="HelpDeskApfModel.FK_TICKETS1_ORGANIZACION" FromRole="TICKETS1" ToRole="ORGANIZACION" />
+          <NavigationProperty Name="USUARIOS" Relationship="HelpDeskApfModel.FK_TICKETS1_USUARIOS" FromRole="TICKETS1" ToRole="USUARIOS" />
+        </EntityType>
+        <Association Name="FK_TICKETS1_DEPARTAMENTOS">
+          <End Type="HelpDeskApfModel.DEPARTAMENTOS" Role="DEPARTAMENTOS" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS1" Role="TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTAMENTOS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="RequestDepartamentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_DIVISION">
+          <End Type="HelpDeskApfModel.DIVISION" Role="DIVISION" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS1" Role="TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIVISION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="DestinationDivisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_ESTATUS">
+          <End Type="HelpDeskApfModel.ESTATUS" Role="ESTATUS" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS1" Role="TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTATUS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="Estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_ISSUES">
+          <End Type="HelpDeskApfModel.ISSUES" Role="ISSUES" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS1" Role="TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ISSUES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="IssueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_ORGANIZACION">
+          <End Type="HelpDeskApfModel.ORGANIZACION" Role="ORGANIZACION" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS1" Role="TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORGANIZACION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="OrganizacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKETS1_USUARIOS">
+          <End Type="HelpDeskApfModel.USUARIOS" Role="USUARIOS" Multiplicity="1" />
+          <End Type="HelpDeskApfModel.TICKETS1" Role="TICKETS1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TICKETS1">
+              <PropertyRef Name="UserRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HelpDeskApfModelStoreContainer" CdmEntityContainer="HelpDeskApfEntities">
+          <EntitySetMapping Name="DEPARTAMENTOS">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.DEPARTAMENTOS">
+              <MappingFragment StoreEntitySet="DEPARTAMENTOS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIVISION">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.DIVISION">
+              <MappingFragment StoreEntitySet="DIVISION">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="departamentoId" ColumnName="departamentoId" />
+                <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTATUS">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.ESTATUS">
+              <MappingFragment StoreEntitySet="ESTATUS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRUPOS">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.GRUPOS">
+              <MappingFragment StoreEntitySet="GRUPOS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ISSUES">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.ISSUES">
+              <MappingFragment StoreEntitySet="ISSUES">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORGANIZACION">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.ORGANIZACION">
+              <MappingFragment StoreEntitySet="ORGANIZACION">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PREGUNTAS">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.PREGUNTAS">
+              <MappingFragment StoreEntitySet="PREGUNTAS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRIORIDAD">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.PRIORIDAD">
+              <MappingFragment StoreEntitySet="PRIORIDAD">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TICKETS_RESPUESTA">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.TICKETS_RESPUESTA">
+              <MappingFragment StoreEntitySet="TICKETS_RESPUESTA">
+                <ScalarProperty Name="IdTickets" ColumnName="IdTickets" />
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_FOLLOWED_USER">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.USER_FOLLOWED_USER">
+              <MappingFragment StoreEntitySet="USER_FOLLOWED_USER">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserIdFollowed" ColumnName="UserIdFollowed" />
+                <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_GROUPS">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.USER_GROUPS">
+              <MappingFragment StoreEntitySet="USER_GROUPS">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfile">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="HelpDeskApfModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="USUARIOS">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.USUARIOS">
+              <MappingFragment StoreEntitySet="USUARIOS">
+                <ScalarProperty Name="Fecha_creacion" ColumnName="Fecha_creacion" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+                <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SPC_GET_TICKET_BY_USR_REQUEST" FunctionName="HelpDeskApfModel.Store.SPC_GET_TICKET_BY_USR_REQUEST">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpDeskApfModel.SPC_GET_TICKET_BY_USR_REQUEST_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="TicketDescrip" ColumnName="TicketDescrip" />
+                <ScalarProperty Name="IssueDescrip" ColumnName="IssueDescrip" />
+                <ScalarProperty Name="UsuarioRequest" ColumnName="UsuarioRequest" />
+                <ScalarProperty Name="DepartamentoDescrip" ColumnName="DepartamentoDescrip" />
+                <ScalarProperty Name="DivisionDescrip" ColumnName="DivisionDescrip" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+                <ScalarProperty Name="Fecha_Correcion" ColumnName="Fecha_Correcion" />
+                <ScalarProperty Name="Fecha_Modificacion" ColumnName="Fecha_Modificacion" />
+                <ScalarProperty Name="OrganizacionDescrip" ColumnName="OrganizacionDescrip" />
+                <ScalarProperty Name="UsuarioAsignado" ColumnName="UsuarioAsignado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="USUARIOS_SEGUIDOS">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.USUARIOS_SEGUIDOS">
+              <MappingFragment StoreEntitySet="USUARIOS_SEGUIDOS">
+                <ScalarProperty Name="UserFollowedId" ColumnName="UserFollowedId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SPC_GET_ALL_TICKETS_WITH_DESCRIP" FunctionName="HelpDeskApfModel.Store.SPC_GET_ALL_TICKETS_WITH_DESCRIP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpDeskApfModel.SPC_GET_ALL_TICKETS_WITH_DESCRIP_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="TicketDescrip" ColumnName="TicketDescrip" />
+                <ScalarProperty Name="IssueDescrip" ColumnName="IssueDescrip" />
+                <ScalarProperty Name="userRequestId" ColumnName="userRequestId" />
+                <ScalarProperty Name="UsuarioRequest" ColumnName="UsuarioRequest" />
+                <ScalarProperty Name="userAssignedId" ColumnName="userAssignedId" />
+                <ScalarProperty Name="UsuarioAsignado" ColumnName="UsuarioAsignado" />
+                <ScalarProperty Name="DepartamentoDescrip" ColumnName="DepartamentoDescrip" />
+                <ScalarProperty Name="DivisionDescrip" ColumnName="DivisionDescrip" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+                <ScalarProperty Name="Fecha_Correcion" ColumnName="Fecha_Correcion" />
+                <ScalarProperty Name="Fecha_Modificacion" ColumnName="Fecha_Modificacion" />
+                <ScalarProperty Name="OrganizacionDescrip" ColumnName="OrganizacionDescrip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPC_GET_TICKETS_USER_FOLLOWED" FunctionName="HelpDeskApfModel.Store.SPC_GET_TICKETS_USER_FOLLOWED">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpDeskApfModel.SPC_GET_TICKETS_USER_FOLLOWED_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="TicketDescrip" ColumnName="TicketDescrip" />
+                <ScalarProperty Name="IssueDescrip" ColumnName="IssueDescrip" />
+                <ScalarProperty Name="userRequestId" ColumnName="userRequestId" />
+                <ScalarProperty Name="UsuarioRequest" ColumnName="UsuarioRequest" />
+                <ScalarProperty Name="userAssignedId" ColumnName="userAssignedId" />
+                <ScalarProperty Name="UsuarioAsignado" ColumnName="UsuarioAsignado" />
+                <ScalarProperty Name="DepartamentoDescrip" ColumnName="DepartamentoDescrip" />
+                <ScalarProperty Name="DivisionDescrip" ColumnName="DivisionDescrip" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+                <ScalarProperty Name="Fecha_Correcion" ColumnName="Fecha_Correcion" />
+                <ScalarProperty Name="Fecha_Modificacion" ColumnName="Fecha_Modificacion" />
+                <ScalarProperty Name="OrganizacionDescrip" ColumnName="OrganizacionDescrip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TICKETS">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.TICKETS">
+              <MappingFragment StoreEntitySet="TICKETS">
+                <ScalarProperty Name="Fecha_Vencimiento" ColumnName="Fecha_Vencimiento" />
+                <ScalarProperty Name="Fecha_Modificacion" ColumnName="Fecha_Modificacion" />
+                <ScalarProperty Name="Fecha_Correcion" ColumnName="Fecha_Correcion" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+                <ScalarProperty Name="UserAssigned" ColumnName="UserAssigned" />
+                <ScalarProperty Name="OrganizacionId" ColumnName="OrganizacionId" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="DestinationDivisionId" ColumnName="DestinationDivisionId" />
+                <ScalarProperty Name="RequestDepartamentId" ColumnName="RequestDepartamentId" />
+                <ScalarProperty Name="UserRequestId" ColumnName="UserRequestId" />
+                <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TICKETS1">
+            <EntityTypeMapping TypeName="HelpDeskApfModel.TICKETS1">
+              <MappingFragment StoreEntitySet="TICKETS1">
+                <ScalarProperty Name="Fecha_Vencimiento" ColumnName="Fecha_Vencimiento" />
+                <ScalarProperty Name="Fecha_Modificacion" ColumnName="Fecha_Modificacion" />
+                <ScalarProperty Name="Fecha_Correcion" ColumnName="Fecha_Correcion" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+                <ScalarProperty Name="UserAssigned" ColumnName="UserAssigned" />
+                <ScalarProperty Name="OrganizacionId" ColumnName="OrganizacionId" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="DestinationDivisionId" ColumnName="DestinationDivisionId" />
+                <ScalarProperty Name="RequestDepartamentId" ColumnName="RequestDepartamentId" />
+                <ScalarProperty Name="UserRequestId" ColumnName="UserRequestId" />
+                <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

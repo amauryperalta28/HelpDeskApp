@@ -1,0 +1,179 @@
+﻿@model HelpDeskApp.Common.Models.Tickets
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    AjaxOptions options = new AjaxOptions()
+    {
+        OnBegin = "return onBegin()",
+        OnComplete = "onComplete",
+        OnSuccess = "onSuccess",
+        OnFailure = "onFailure"
+    };
+   bool  ticketIsClosed = @Model.Estatus == 3;
+    
+}
+
+@using (Ajax.BeginForm("Edit", "Ticket", null, options, new { @class = "form-horizontal", @role = "form", @id = "Ticketform" }))
+{
+    <div class="row">
+        <div class="col-sm-8 widget-container">
+            <div class="widget-box transparent " style="opacity: 1; z-index: 0;">
+                <div class="widget-header">
+                    <h4 class="widget-title lighter"><i class="fa fa-info-circle"></i>&nbsp;Datos de la Solicitud</h4>
+                </div>
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Título </label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="Titulo" id="Titulo" data-requirederror="Debe ingresar un titulo"  value= "@Model.Titulo" placeholder="Titulo" class="form-control col-xs-10 col-sm-12 required" />
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Descripcion </label>
+                                <div class="col-sm-7">
+                                   
+                                    <textarea name="Descripcion" id="Descripcion" data-requirederror="Debe indicar un Descripción" maxlength="200" placeholder="Descripción" class="form-control col-xs-10 col-sm-12 identification required"> @Model.Descripcion</textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Tipo de incidente </label>
+                                <div class="col-sm-7">
+                                    @Html.DropDownListFor(model => model.IssueId, new SelectList(ViewBag.Issues, "Id", "Description"), new { @class = "form-control", data_message = "Debe elegir un tipo de incidente.", id = "IssueId" })
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Usuario Asignado </label>
+                                <div class="col-sm-7">
+                                    @Html.DropDownListFor(model => model.UserAssigned, new SelectList(ViewBag.Usuarios, "Id", "Description"), new { @class = "form-control", data_message = "Debe elegir un usuario asignado", id = "UserRequestId" })
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Usuario Solicitud </label>
+                                <div class="col-sm-7">
+                                    @Html.DropDownListFor(model => model.UserRequestId, new SelectList(ViewBag.Usuarios, "Id", "Description"), new { @class = "form-control", data_message = "Debe elegir un usuario de Solicitud", id = "UserRequestId" })
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Departamento Solicitud </label>
+                                <div class="col-sm-7">
+                                    @Html.DropDownListFor(model => model.RequestDepartamentId, new SelectList(ViewBag.Departamentos, "Id", "Description"), new { @class = "form-control", data_message = "Debe elegir un Departamento de Solicitud", id = "RequestDepartamentId" })
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Division Destino </label>
+                                <div class="col-sm-7">
+                                    @Html.DropDownListFor(model => model.DestinationDivisionId, new SelectList(ViewBag.Division, "Id", "Description"), new { @class = "form-control", data_message = "Debe elegir una division", id = "DestinationDivisionId" })
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Organizacion </label>
+                                <div class="col-sm-7">
+                                    @Html.DropDownListFor(model => model.OrganizacionId, new SelectList(ViewBag.Organizacion, "Id", "Description"), new { @class = "form-control", data_message = "Debe elegir una organizacion", id = "OrganizacionId" })
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="Name">Estatus Solicitud </label>
+                                <div class="col-sm-7">
+                                    @Html.DropDownListFor(model => model.Estatus, new SelectList(ViewBag.Estatus, "Id", "Description"), new { @class = "form-control", data_message = "Debe elegir un Estatus", id = "Estatus" })
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-md-offset-5 col-md-9">
+
+                                <button class="btn btn-sm" type="reset" id="clearForm">
+                                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                                    Limpiar
+                                </button>
+
+                                &nbsp; &nbsp; &nbsp;
+                            <button class="btn btn-sm btn-info" type="submit" id="saveForm">
+                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                Guardar
+                            </button>
+                            </div>
+
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br /><br />
+    <br /><br />
+    <br /><br />
+}
+
+@section scripts{
+
+
+    <script src="@Url.Content("~/System_Scripts/TicketJs.js")"></script>
+
+     <script>
+         $(document).ready(function () {
+             var closedTicket = "@Model.Estatus";
+                 if(closedTicket ==3)
+                 {
+                     disableInputs()
+                 }
+
+
+         });
+
+         function disableInputs()
+         {
+             $('#Titulo').attr('disabled', 'disabled');
+             $('#Descripcion').attr('disabled', 'disabled');
+             $.each($('select:visible'), function (index, obj) {
+                 var $obj = $(obj);
+                 $obj.attr('disabled', 'disabled');
+             });
+         }
+         function onComplete() {
+
+             //window.location.assign('@Url.Action("index", "Ticket")');
+         }
+         function onSuccess(data) {
+             TicketJs.dataController(data);
+             disableInputs()
+             
+         }
+         function onBegin() {
+             return TicketJs.validateForm();
+         }
+         function onFailure() {
+             UnBlockControl(".page-content");
+             
+         }
+    </script>
+
+    }

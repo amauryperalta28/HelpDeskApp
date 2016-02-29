@@ -136,18 +136,11 @@
     <script src="@Url.Content("~/System_Scripts/TicketJs.js")"></script>
 
      <script>
-         //FarmJS.loadApiaristsGrid();
-         //$('#Apiarists').hide();
-         //$('#types').change();
-
-
-         //$('#clearForm').click(function () {
-         //    FarmJS.clearApiarists();
-         //});
+ 
 
          function onComplete() {
 
-            // window.location.assign('@Url.Action("index", "Ticket")');
+             window.location.assign('@Url.Action("index", "Ticket")');
          }
          function onSuccess(data) {
              TicketJs.dataController(data);
@@ -157,7 +150,7 @@
              return TicketJs.validateForm();
          }
          function onFailure() {
-            // UnBlockControl(".page-content");
+             UnBlockControl(".page-content");
          }
     </script>
 
